@@ -20,7 +20,7 @@ const navigatorStyle = {
 	tabBarSelectedButtonColor: 'red',
 	tabBarBackgroundColor: 'white'
 };
-
+/*
 Navigation.startSingleScreenApp({
 	screen: {
 		screen: 'movieapp.Movies',
@@ -32,4 +32,35 @@ Navigation.startSingleScreenApp({
 			screen: 'movieapp.Drawer'
 		}
 	}
+});
+*/
+const createTabs = () => {
+  let tabs = [
+    {
+      label: 'Movies',
+      screen: 'movieapp.Movies',
+			icon: require('./img/coupon.png'),
+      title: 'Movies'
+    },
+    {
+			label: 'TV Shows',
+			screen: 'movieapp.Movies',
+			icon: require('./img/collect.png'),
+			title: 'TV Shows',
+
+    }
+  ];
+
+
+  return tabs;
+};
+// this will start our app
+Navigation.startTabBasedApp({
+  tabs: createTabs(),
+  appStyle: {
+    tabBarBackgroundColor: '#0f2362',
+    tabBarButtonColor: '#ffffff',
+    tabBarSelectedButtonColor: '#63d7cc'
+  }
+
 });
